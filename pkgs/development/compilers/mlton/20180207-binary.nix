@@ -1,6 +1,6 @@
 { stdenv, fetchurl, gmp }:
 let
-  dynamic-linker = "${stdenv.glibc.out}/lib/ld-linux-x86-64.so.2";
+  dynamic-linker = stdenv.cc.bintools.dynamicLinker;
 in
 stdenv.mkDerivation rec {
   name = "mlton-${version}";
